@@ -1,0 +1,1634 @@
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 28 columns and 283 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.3951368e+36   8.893750e+31   1.395137e+06      0s
+      14    5.3432821e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 14 iterations and 0.00 seconds
+Optimal objective  5.343282136e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 34 columns and 377 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.5088412e+36   9.843750e+31   1.508841e+06      0s
+      15    5.3432821e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 15 iterations and 0.00 seconds
+Optimal objective  5.343282136e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 39 columns and 443 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.7299967e+36   1.125000e+32   1.729997e+06      0s
+      17    5.3432821e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 17 iterations and 0.00 seconds
+Optimal objective  5.343282136e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 43 columns and 493 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.4211146e+36   1.660000e+32   2.421115e+06      0s
+      25    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 25 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 49 columns and 576 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.3071989e+36   1.600625e+32   2.307199e+06      0s
+      29    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 29 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 56 columns and 660 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.1661438e+36   2.873750e+32   4.166144e+06      0s
+      45    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 45 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 62 columns and 723 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.0643598e+36   2.780625e+32   4.064360e+06      0s
+      32    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 32 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 69 columns and 818 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.8399613e+36   4.054375e+32   5.839961e+06      0s
+      51    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 51 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 75 columns and 890 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    6.5173644e+36   4.577500e+32   6.517364e+06      0s
+      51    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 51 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 82 columns and 976 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    7.2322451e+36   5.062500e+32   7.232245e+06      0s
+      69    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 69 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 88 columns and 1048 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    7.1508789e+36   5.001250e+32   7.150879e+06      0s
+      58    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 58 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 94 columns and 1107 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    8.8024045e+36   6.211875e+32   8.802405e+06      0s
+      58    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 58 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 101 columns and 1201 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.7368763e+36   4.090625e+32   5.736876e+06      0s
+      83    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 83 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 107 columns and 1286 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    6.1564120e+36   4.396875e+32   6.156412e+06      0s
+      69    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 69 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 113 columns and 1360 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    9.9943344e+36   7.173125e+32   9.994334e+06      0s
+      74    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 74 iterations and 0.00 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 119 columns and 1418 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+      93    5.3434416e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 93 iterations and 0.01 seconds
+Optimal objective  5.343441598e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 126 columns and 1498 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     150    5.3434915e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 150 iterations and 0.02 seconds
+Optimal objective  5.343491493e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 133 columns and 1580 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     130    5.3439359e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 130 iterations and 0.01 seconds
+Optimal objective  5.343935950e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 140 columns and 1678 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     149    5.3443668e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 149 iterations and 0.01 seconds
+Optimal objective  5.344366834e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 146 columns and 1735 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     143    5.3448094e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 143 iterations and 0.01 seconds
+Optimal objective  5.344809397e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 153 columns and 1804 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     150    5.3451756e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 150 iterations and 0.01 seconds
+Optimal objective  5.345175573e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 159 columns and 1874 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     163    5.3454380e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 163 iterations and 0.01 seconds
+Optimal objective  5.345437988e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 166 columns and 1948 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     171    5.3456602e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 171 iterations and 0.01 seconds
+Optimal objective  5.345660236e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 173 columns and 2025 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     166    5.3459325e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 166 iterations and 0.01 seconds
+Optimal objective  5.345932456e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 180 columns and 2096 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     182    5.3460392e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 182 iterations and 0.01 seconds
+Optimal objective  5.346039182e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 187 columns and 2164 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     167    5.3461683e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 167 iterations and 0.01 seconds
+Optimal objective  5.346168290e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 194 columns and 2230 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.5503461e+37   1.123875e+33   1.550346e+07      0s
+     167    5.3463605e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 167 iterations and 0.01 seconds
+Optimal objective  5.346360549e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 200 columns and 2286 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.5971163e+37   1.160000e+33   1.597116e+07      0s
+     182    5.3466443e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 182 iterations and 0.01 seconds
+Optimal objective  5.346644268e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 207 columns and 2339 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.6322835e+37   1.190312e+33   1.632283e+07      0s
+     213    5.3468086e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 213 iterations and 0.01 seconds
+Optimal objective  5.346808638e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 214 columns and 2411 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.6747474e+37   1.221812e+33   1.674747e+07      0s
+     176    5.3468994e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 176 iterations and 0.01 seconds
+Optimal objective  5.346899371e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 220 columns and 2456 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     190    5.3470468e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 190 iterations and 0.01 seconds
+Optimal objective  5.347046800e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 227 columns and 2529 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     180    5.3472441e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 180 iterations and 0.01 seconds
+Optimal objective  5.347244107e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 234 columns and 2586 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     184    5.3473186e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 184 iterations and 0.02 seconds
+Optimal objective  5.347318568e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 241 columns and 2659 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     194    5.3473966e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 194 iterations and 0.01 seconds
+Optimal objective  5.347396586e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 248 columns and 2726 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     195    5.3474835e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 195 iterations and 0.01 seconds
+Optimal objective  5.347483540e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 253 columns and 2777 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     202    5.3476339e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 202 iterations and 0.01 seconds
+Optimal objective  5.347633924e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 259 columns and 2824 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     197    5.3477417e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 197 iterations and 0.01 seconds
+Optimal objective  5.347741670e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 265 columns and 2873 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     197    5.3478029e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 197 iterations and 0.01 seconds
+Optimal objective  5.347802901e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 271 columns and 2921 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     193    5.3478425e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 193 iterations and 0.01 seconds
+Optimal objective  5.347842520e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 277 columns and 2977 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     205    5.3478789e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 205 iterations and 0.01 seconds
+Optimal objective  5.347878897e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 283 columns and 3010 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     192    5.3479276e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 192 iterations and 0.01 seconds
+Optimal objective  5.347927564e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 289 columns and 3063 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     195    5.3479992e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 195 iterations and 0.01 seconds
+Optimal objective  5.347999237e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 296 columns and 3125 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.9885458e+37   1.491063e+33   1.988546e+07      0s
+     213    5.3480599e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 213 iterations and 0.01 seconds
+Optimal objective  5.348059921e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 299 columns and 3147 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     230    5.3480935e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 230 iterations and 0.01 seconds
+Optimal objective  5.348093467e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 304 columns and 3187 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     243    5.3481087e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 243 iterations and 0.01 seconds
+Optimal objective  5.348108683e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 311 columns and 3249 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     230    5.3481393e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 230 iterations and 0.01 seconds
+Optimal objective  5.348139308e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 315 columns and 3284 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     222    5.3481508e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 222 iterations and 0.01 seconds
+Optimal objective  5.348150813e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 321 columns and 3334 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.1501634e+37   1.620625e+33   2.150163e+07      0s
+     238    5.3481804e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 238 iterations and 0.01 seconds
+Optimal objective  5.348180368e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 323 columns and 3350 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.1561461e+37   1.626062e+33   2.156146e+07      0s
+     263    5.3481850e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 263 iterations and 0.01 seconds
+Optimal objective  5.348185023e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 326 columns and 3374 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.1726584e+37   1.638812e+33   2.172658e+07      0s
+     238    5.3481880e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 238 iterations and 0.01 seconds
+Optimal objective  5.348187962e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 331 columns and 3429 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     217    5.3482126e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 217 iterations and 0.01 seconds
+Optimal objective  5.348212645e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 332 columns and 3439 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     223    5.3482208e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 223 iterations and 0.01 seconds
+Optimal objective  5.348220787e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 338 columns and 3487 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     212    5.3482314e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 212 iterations and 0.01 seconds
+Optimal objective  5.348231365e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 341 columns and 3515 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     216    5.3482422e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 216 iterations and 0.01 seconds
+Optimal objective  5.348242180e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 347 columns and 3558 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     253    5.3482733e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 253 iterations and 0.01 seconds
+Optimal objective  5.348273260e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 350 columns and 3583 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     243    5.3483264e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 243 iterations and 0.01 seconds
+Optimal objective  5.348326422e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 355 columns and 3625 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     238    5.3483873e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 238 iterations and 0.01 seconds
+Optimal objective  5.348387313e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 358 columns and 3648 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     251    5.3483897e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 251 iterations and 0.01 seconds
+Optimal objective  5.348389728e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 363 columns and 3703 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     218    5.3483989e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 218 iterations and 0.01 seconds
+Optimal objective  5.348398892e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 364 columns and 3710 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     226    5.3484050e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 226 iterations and 0.01 seconds
+Optimal objective  5.348404984e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 367 columns and 3735 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     221    5.3484180e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 221 iterations and 0.01 seconds
+Optimal objective  5.348417983e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 373 columns and 3787 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     203    5.3484411e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 203 iterations and 0.01 seconds
+Optimal objective  5.348441104e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 374 columns and 3795 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     199    5.3484411e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 199 iterations and 0.01 seconds
+Optimal objective  5.348441123e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 377 columns and 3823 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     207    5.3484539e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 207 iterations and 0.01 seconds
+Optimal objective  5.348453894e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 383 columns and 3894 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     262    5.3484627e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 262 iterations and 0.01 seconds
+Optimal objective  5.348462718e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 388 columns and 3929 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     265    5.3484809e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 265 iterations and 0.01 seconds
+Optimal objective  5.348480931e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 393 columns and 3979 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     241    5.3485032e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 241 iterations and 0.01 seconds
+Optimal objective  5.348503211e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 397 columns and 4014 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     249    5.3485278e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 249 iterations and 0.01 seconds
+Optimal objective  5.348527817e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 401 columns and 4043 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     252    5.3485497e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 252 iterations and 0.01 seconds
+Optimal objective  5.348549664e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 405 columns and 4083 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     243    5.3485726e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 243 iterations and 0.01 seconds
+Optimal objective  5.348572609e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 409 columns and 4117 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     243    5.3485765e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 243 iterations and 0.01 seconds
+Optimal objective  5.348576489e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 412 columns and 4154 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     247    5.3486486e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 247 iterations and 0.01 seconds
+Optimal objective  5.348648566e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 414 columns and 4168 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     244    5.3486515e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 244 iterations and 0.01 seconds
+Optimal objective  5.348651471e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 419 columns and 4219 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     230    5.3486766e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 230 iterations and 0.01 seconds
+Optimal objective  5.348676631e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 423 columns and 4265 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     239    5.3487010e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 239 iterations and 0.01 seconds
+Optimal objective  5.348701039e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 426 columns and 4295 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     252    5.3487504e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 252 iterations and 0.01 seconds
+Optimal objective  5.348750409e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 428 columns and 4311 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     253    5.3487589e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 253 iterations and 0.01 seconds
+Optimal objective  5.348758944e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 429 columns and 4317 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     252    5.3487590e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 252 iterations and 0.01 seconds
+Optimal objective  5.348758991e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 432 columns and 4348 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     248    5.3487802e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 248 iterations and 0.01 seconds
+Optimal objective  5.348780209e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 435 columns and 4378 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     257    5.3487962e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 257 iterations and 0.01 seconds
+Optimal objective  5.348796199e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 439 columns and 4414 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     264    5.3488081e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 264 iterations and 0.01 seconds
+Optimal objective  5.348808089e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 441 columns and 4436 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     258    5.3488249e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 258 iterations and 0.02 seconds
+Optimal objective  5.348824865e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 445 columns and 4493 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     253    5.3488457e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 253 iterations and 0.02 seconds
+Optimal objective  5.348845650e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 447 columns and 4520 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     250    5.3488511e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 250 iterations and 0.01 seconds
+Optimal objective  5.348851128e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 450 columns and 4536 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     285    5.3489022e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 285 iterations and 0.01 seconds
+Optimal objective  5.348902207e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 454 columns and 4570 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     269    5.3489028e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 269 iterations and 0.01 seconds
+Optimal objective  5.348902836e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 456 columns and 4584 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     253    5.3489051e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 253 iterations and 0.01 seconds
+Optimal objective  5.348905086e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 460 columns and 4630 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     235    5.3489176e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 235 iterations and 0.01 seconds
+Optimal objective  5.348917626e+05
+Changed value of parameter FeasibilityTol to 0.001
+   Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+Changed value of parameter MIPFocus to 2
+   Prev: 0  Min: 0  Max: 3  Default: 0
+Changed value of parameter Presolve to 0
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Optimize a model with 52 rows, 460 columns and 4630 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.4094601e+06   6.968750e+01   0.000000e+00      0s
+     235    5.3489176e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 235 iterations and 0.01 seconds
+Optimal objective  5.348917626e+05
+Optimize a model with 52 rows, 460 columns and 4630 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 2e+01]
+  Objective range [4e+00, 2e+05]
+  Bounds range    [0e+00, 0e+00]
+  RHS range       [1e+00, 2e+01]
+Variable types: 0 continuous, 460 integer (0 binary)
+
+Root relaxation: objective 5.348918e+05, 283 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 534891.761    0   52          - 534891.761      -     -    0s
+     0     0 534747.638    0   57          - 534747.638      -     -    0s
+     0     0 534667.128    0   60          - 534667.128      -     -    0s
+     0     0 534555.294    0   70          - 534555.294      -     -    0s
+     0     0 534539.786    0   64          - 534539.786      -     -    0s
+     0     0 534463.943    0   76          - 534463.943      -     -    0s
+H    0     0                    534328.21359 534463.943  0.03%     -    0s
+H    0     0                    534344.15980 534463.943  0.02%     -    0s
+     0     0     cutoff    0      534344.160 534344.160  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 18
+  MIR: 61
+
+Explored 0 nodes (1012 simplex iterations) in 0.42 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.343441597987e+05, best bound 5.343441597987e+05, gap 0.0%

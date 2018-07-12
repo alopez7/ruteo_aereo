@@ -1,0 +1,11 @@
+Avion: 6      Iteracion: 0
+
+Num Ruta: 4
+Ingresos: 0
+Costos: 124.853342994
+Utilidad Ruta: -124.853342994
+Costo Reducido: -
+Nodos: [106, 716]
+q: [0, 0]
+Q: [0, 0]
+B: [0, 0]

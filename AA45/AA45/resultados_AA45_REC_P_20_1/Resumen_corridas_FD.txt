@@ -1,0 +1,4 @@
+['Corrida', 'Tiempo (seg)', 'Utilidad Relajada (US$)', 'Utilidad Final (US$)']
+[1, 1109.9527490139008, 7296.7550414218595, 'Total Utilidad: 7296.76']
+[2, 1344.8714299201965, 7377.940935436791, 'Total Utilidad: 7377.94']
+[3, 10334.174772977829, 7376.846247703331, 'Total Utilidad: 7376.85']
