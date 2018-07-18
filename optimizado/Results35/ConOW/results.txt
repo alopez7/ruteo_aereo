@@ -1,0 +1,30 @@
+Utilidad = 6924.351651
+RutasSolucion = 7
+RutasGeneradas = 275
+Probabilidades = [0.013699, 0.013699, 0.561644, 0.013699, 0.013699, 0.013699,  0.369863]
+Veces ejecutado = [328, 139, 517, 138, 452, 152,  490]
+
+Utilidad = 7011.024858
+RutasSolucion = 7
+RutasGeneradas = 327
+Probabilidades = [0.005988, 0.005988, 0.281437, 0.137725, 0.293413, 0.005988,  0.269461]
+Veces ejecutado = [582, 133, 592, 466, 600, 153,  336]
+
+Utilidad = 6740.668604
+RutasSolucion = 7
+RutasGeneradas = 190
+Probabilidades = [0.067164, 0.007463, 0.320896, 0.261194, 0.328358, 0.007463,  0.007463]
+Veces ejecutado = [237, 67, 274, 249, 258, 75,  84]
+
+Utilidad = 6898.222270
+RutasSolucion = 7
+RutasGeneradas = 284
+Probabilidades = [0.023810, 0.023810, 0.857143, 0.023810, 0.023810, 0.023810,  0.023810]
+Veces ejecutado = [387, 208, 566, 273, 246, 206,  235]
+
+Utilidad = 6932.354548
+RutasSolucion = 7
+RutasGeneradas = 339
+Probabilidades = [0.232558, 0.005814, 0.284884, 0.250000, 0.215116, 0.005814,  0.005814]
+Veces ejecutado = [525, 104, 585, 567, 527, 123,  119]
+

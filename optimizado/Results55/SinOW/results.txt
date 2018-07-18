@@ -1,0 +1,60 @@
+Utilidad = 10071.604690
+RutasSolucion = 7
+RutasGeneradas = 127
+Probabilidades = [0.293103, 0.008621, 0.008621, 0.310345, 0.008621, 0.008621,  0.362069]
+Veces ejecutado = [114, 41, 55, 129, 51, 40,  87]
+
+Utilidad = 10411.167377
+RutasSolucion = 7
+RutasGeneradas = 354
+Probabilidades = [0.430380, 0.012658, 0.506329, 0.012658, 0.012658, 0.012658,  0.012658]
+Veces ejecutado = [626, 213, 714, 419, 299, 242,  308]
+
+Utilidad = 10607.956535
+RutasSolucion = 7
+RutasGeneradas = 432
+Probabilidades = [0.313559, 0.008475, 0.406780, 0.008475, 0.016949, 0.237288,  0.008475]
+Veces ejecutado = [682, 327, 774, 527, 417, 454,  349]
+
+Utilidad = 10299.802030
+RutasSolucion = 7
+RutasGeneradas = 302
+Probabilidades = [0.011765, 0.011765, 0.529412, 0.011765, 0.011765, 0.011765,  0.411765]
+Veces ejecutado = [394, 180, 536, 181, 232, 203,  544]
+
+Utilidad = 9930.395684
+RutasSolucion = 7
+RutasGeneradas = 180
+Probabilidades = [0.300813, 0.008130, 0.373984, 0.292683, 0.008130, 0.008130,  0.008130]
+Veces ejecutado = [219, 72, 244, 167, 80, 104,  101]
+
+Utilidad = 10608.665997
+RutasSolucion = 7
+RutasGeneradas = 439
+Probabilidades = [0.020408, 0.020408, 0.877551, 0.020408, 0.020408, 0.020408,  0.020408]
+Veces ejecutado = [751, 192, 857, 811, 479, 701,  239]
+
+Utilidad = 10615.483043
+RutasSolucion = 7
+RutasGeneradas = 517
+Probabilidades = [0.242938, 0.005650, 0.242938, 0.005650, 0.005650, 0.237288,  0.259887]
+Veces ejecutado = [1100, 264, 1158, 307, 1051, 572,  380]
+
+Utilidad = 10487.447566
+RutasSolucion = 7
+RutasGeneradas = 394
+Probabilidades = [0.020833, 0.020833, 0.854167, 0.041667, 0.020833, 0.020833,  0.020833]
+Veces ejecutado = [561, 229, 741, 587, 247, 462,  234]
+
+Utilidad = 10227.134969
+RutasSolucion = 7
+RutasGeneradas = 207
+Probabilidades = [0.013333, 0.013333, 0.013333, 0.453333, 0.480000, 0.013333,  0.013333]
+Veces ejecutado = [166, 121, 166, 258, 207, 147,  133]
+
+Utilidad = 10577.144928
+RutasSolucion = 7
+RutasGeneradas = 517
+Probabilidades = [0.431579, 0.010526, 0.515789, 0.010526, 0.010526, 0.010526,  0.010526]
+Veces ejecutado = [829, 519, 993, 600, 597, 896,  603]
+
