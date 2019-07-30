@@ -133,8 +133,10 @@ static void map_nodes_init(Map* map, char* map_path, char* airplanes_path)
 }
 
 /** crea el arrelgo de macro nodos */
-static void map_macronodes_init(Map* map)
+static void map_macronodes_init(Map* map, char* macronodes_file)
 {
+  // TODO: Implementar lectura de archivo de macronodos en vez de ver posiciones
+
   // Creo los macro nodos
   // Creo el arrelgo de macro nodos de tamaño |nodes| pero luego lo comprimo
   map -> macronodes = malloc(sizeof(Macronode*) * map -> node_count);
@@ -233,7 +235,7 @@ static void macronode_destroy(Macronode* macronode)
 
 
 /** Metodo que parsea el input y crea el mapa completo */
-Map* map_init(char* map_path, char* airplanes_path)
+Map* map_init(char* map_path, char* airplanes_path, char* macronodes_file)
 {
   // Creo el mapa
   Map* map = malloc(sizeof(Map));
@@ -242,7 +244,7 @@ Map* map_init(char* map_path, char* airplanes_path)
   map_nodes_init(map, map_path, airplanes_path);
 
   // creo los macro nodos
-  map_macronodes_init(map);
+  map_macronodes_init(map, macronodes_file);
 
   // creo la matriz de PB
   map_pb_matrix_init(map);

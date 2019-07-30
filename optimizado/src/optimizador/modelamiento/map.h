@@ -118,6 +118,10 @@ struct map
   uint16_t** original_flights;
   /** Arreglo con las aviones */
   Airplane** airplanes;
+  /** Matriz de MxMxA (macro, macro, airplaine) costos de viaje entre macronodos */
+  float*** costs;
+  /** Matriz de MxMxA (macro, macro, airplaine) tiempos de viaje entre macronodos */
+  float*** distances;
 };
 /** mapa con todos los nodos e macronodos */
 typedef struct map Map;
@@ -129,7 +133,7 @@ typedef struct map Map;
 
 
 /** Metodo que parsea el input y crea el mapa completo */
-Map* map_init(char* file_path, char* airplanes_path);
+Map* map_init(char* file_path, char* airplanes_path, char* macronodes_file);
 
 /** Metodo que libera toda la memoria asociada el mapa */
 void map_destroy(Map* map);

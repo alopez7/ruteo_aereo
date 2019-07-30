@@ -12,18 +12,18 @@ void random_seed()
 int main(int argc, char *argv[])
 {
   // Obtengo el input del programa
-  if (argc == 4)
+  if (argc == 5)
   {
     optimizing_weights = false;
   }
-  else if (argc == 5)
+  else if (argc == 6)
   {
     optimizing_weights = true;
   }
   else
   {
     printf("Modo de uso:\n");
-    printf("[./optimizador] [orders_file] [airplanes_file] [PB_file] (-ow)\n");
+    printf("[./optimizador] [orders_file] [airplanes_file] [PB_file] [macronodes_file](-ow)\n");
     return 0;
   }
   // Pongo una seed aleatoria al random del programa
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
   while (no_improve < improve_runs && iteration < max_iterations && total_time < 3600)
   {
     // Inicializo el ans
-    ANS* ans = ans_init(argv[1], argv[2], argv[3]);
+    ANS* ans = ans_init(argv[1], argv[2], argv[3], argv[4]);
 
     // Ejecuto el solver
     double* solution = solve(ans);

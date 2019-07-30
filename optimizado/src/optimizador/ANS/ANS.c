@@ -21,13 +21,13 @@ double random_bounded(double bound)
 }
 
 /** Crea la estructura ANS del programa */
-ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath)
+ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath, char* macronodes_file)
 {
   // Creo al ans
   ANS* ans = malloc(sizeof(ANS));
 
   // Inicializo el mapa
-  ans -> map = map_init(orders_filepath, airplanes_filepath);
+  ans -> map = map_init(orders_filepath, airplanes_filepath, macronodes_file);
 
   // Inicializo la planificacion base
   ans -> bp = bp_init(bp_filepath, ans -> map);

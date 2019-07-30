@@ -4,7 +4,7 @@
 
 Para compilar hay que estar en la carpeta "optimizado" con la consola y escribir
 
-```
+```sh
 make
 ```
 
@@ -12,7 +12,7 @@ Esto generará un archivo compilado llamado "optimizador" y una carpeta obj con 
 
 Para limpiar todos los archivos binarios y compilados hay que escribir en consola
 
-```
+```sh
 make clean
 ```
 
@@ -22,7 +22,7 @@ Esto borrará la carpeta obj y el archivo "optimizador"
 
 Ejecutar en consola:
 
-```
+```sh
 ./optimizador [orders.txt] [airplanes.txt] [PB.txt] (-ow)
 ```
 
@@ -34,7 +34,7 @@ Donde:
 * (-ow) es opcional y determina si se optimizan los pesos en una ruta o si se toman solo los pesos completos
 
 Ejemplo ejecutando la instacia de 35 pedidos optimizando los pesos:
-```
+```sh
 ./optimizador files/AA35/orders.txt files/AA35/airplanes.txt files/AA35/PB.txt -ow
 ```
 
