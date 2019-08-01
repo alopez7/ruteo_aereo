@@ -41,16 +41,10 @@ n_costos líneas siguientes
 
 ## PB.txt
 
-Primera linea
+numero_aviones líneas parten con
 
 ```
-[n_rutas]
-```
-
-Siguientes n_rutas líneas parten con
-
-```
-[id_avion] [n_nodos_ruta]
+[n_nodos_ruta]
 ```
 
 y los siguientes números de cada línea son los nodos de la ruta

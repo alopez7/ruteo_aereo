@@ -8,19 +8,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 /** crea un macro nodo a partir de un nodo */
-static Macronode* macronode_init(Node* node, int id)
+static Macronode* macronode_init(int id)
 {
   // Creo el macro nodo
   Macronode* macro = malloc(sizeof(Macronode));
 
   // Inicializo sus variables
-  macro -> node_count = 1;
-  macro -> X = node -> X;
-  macro -> Y = node -> Y;
+  macro -> node_count = 0;
   macro -> id = id;
-
-  // Creo la referencia al macro desde el nodo
-  node -> father = macro;
 
   // Retorno el macro nodo
   return macro;
@@ -40,7 +35,7 @@ static void map_nodes_init(Map* map, char* map_path, char* airplanes_path)
   int airplane_nodes_count = airplanes_count * 2;
 
   int map_nodes_count;
-  fscanf(map_file, "%d", &map_nodes_count);
+  fscanf(map_file, "%d %d", &map_nodes_count, &map -> macronode_count);
   // Aca inicializo la variable global order_count
   order_count = map_nodes_count / 2;
   map -> node_count = airplane_nodes_count + map_nodes_count;
@@ -51,23 +46,31 @@ static void map_nodes_init(Map* map, char* map_path, char* airplanes_path)
   map -> limit_count = airplanes_count;
   map -> limits = malloc(sizeof(Order) * map -> limit_count);
 
+  // Creo el arreglo de macronodos y creo los macronodos incialmente vacios
+  map -> macronodes = malloc(sizeof(Macronode*) * map -> macronode_count);
+  for (int i = 0; i < map -> macronode_count; i++)
+  {
+    map -> macronodes[i] = macronode_init(i);
+  }
+
   // Voy creando los nodos del mapa uno por uno
   for (int i = 0; i < map_nodes_count; i++)
   {
     map -> nodes[i] = malloc(sizeof(Node));
+    Node* n = map -> nodes[i];
 
     // Leo e inicializo los atributos del nodo
     char type;
-    fscanf(map_file, "%d %c %lf %lf %lf %lf %lf %lf %lf", &map -> nodes[i] -> id,
-    &type, &map -> nodes[i] -> X, &map -> nodes[i] -> Y,
-    &map -> nodes[i] -> delay_time, &map -> nodes[i] -> total_weight,
-    &map -> nodes[i] -> start_time, &map -> nodes[i] -> end_time,
-    &map -> nodes[i] -> fee);
+    int father_id;
+    fscanf(map_file, "%d %d %c %lf %lf %lf %lf %lf", &n -> id, &father_id,
+    &type, &n -> total_weight, &n -> delay_time, &n -> start_time,
+    &n -> end_time, &n -> fee);
 
     // Inicializo otros atributos del nodo
-    map -> nodes[i] -> dual_pi = 0;
-    map -> nodes[i] -> node_type = type == 'p' ? PICKUP : DELIVERY;
-    map -> nodes[i] -> father = NULL;
+    n -> dual_pi = 0;
+    n -> node_type = type == 'p' ? PICKUP : DELIVERY;
+    n -> father = map -> macronodes[father_id];
+    map -> macronodes[father_id] -> node_count++;
 
     // Creo los pedidos
     if (i < order_count)
@@ -86,21 +89,23 @@ static void map_nodes_init(Map* map, char* map_path, char* airplanes_path)
   {
     int j = i + map_nodes_count;
     map -> nodes[j] = malloc(sizeof(Node));
+    Node* n = map -> nodes[j];
 
     // Leo e inicializo los atributos del nodo
     char type;
+    int father_id;
     int airplane_id;
-    fscanf(airplanes_file, "%d %c %d %lf %lf %lf %lf\n", &airplane_id,
-    &type, &map -> nodes[j] -> id, &map -> nodes[j] -> X, &map -> nodes[j] -> Y,
-    &map -> nodes[j] -> start_time, &map -> nodes[j] -> end_time);
+    fscanf(airplanes_file, "%d %c %d %d %lf %lf\n", &airplane_id,
+    &type, &n -> id, &father_id,
+    &n -> start_time, &n -> end_time);
 
     // Inicializo otros atributos del nodo
-    map -> nodes[j] -> total_weight = 0;
-    map -> nodes[j] -> fee = 0;
-    map -> nodes[j] -> delay_time = 0;
-    map -> nodes[j] -> node_type = type == 's' ? START : END;
-    map -> nodes[j] -> father = NULL;
-    map -> nodes[j] -> dual_pi = 0;
+    n -> total_weight = 0;
+    n -> fee = 0;
+    n -> delay_time = 0;
+    n -> node_type = type == 's' ? START : END;
+    n -> father = map -> macronodes[father_id];
+    n -> dual_pi = 0;
 
     // Creo los limites
     if (type == 's')
@@ -130,54 +135,6 @@ static void map_nodes_init(Map* map, char* map_path, char* airplanes_path)
   // cierro los archivos
   fclose(map_file);
   fclose(airplanes_file);
-}
-
-/** crea el arrelgo de macro nodos */
-static void map_macronodes_init(Map* map, char* macronodes_file)
-{
-  // TODO: Implementar lectura de archivo de macronodos en vez de ver posiciones
-
-  // Creo los macro nodos
-  // Creo el arrelgo de macro nodos de tamaño |nodes| pero luego lo comprimo
-  map -> macronodes = malloc(sizeof(Macronode*) * map -> node_count);
-  map -> macronode_count = 0;
-
-  // (no es particularmente eficiente pero este tiempo es
-  // negligible con respecto al programa)
-
-  // Para todos los nodos
-  for (int i = 0; i < map -> node_count; i++)
-  {
-    Node* actualnode = map -> nodes[i];
-    // Veo los nodos anteriores
-    for (int j = 0; j < i; j++)
-    {
-      // Si hay un macro nodo con las mismas cordenadas
-      Macronode* actualmacro = map -> nodes[j] -> father;
-      if (actualmacro -> X == actualnode -> X && actualmacro -> Y == actualnode -> Y)
-      {
-        // Agrego el macro nodo
-        actualnode -> father = actualmacro;
-        actualmacro -> node_count++;
-        break;
-      }
-    }
-    // Si no se ha agregado ningun macro nodo, creo uno nuevo
-    if (!actualnode -> father)
-    {
-      map -> macronodes[map -> macronode_count] = macronode_init(actualnode, map -> macronode_count);
-      map -> macronode_count++;
-    }
-  }
-
-  // Comprimo el arreglo de macro nodos
-  Macronode** macros = malloc(sizeof(Macronode*) * map -> macronode_count);
-  for (int i = 0; i < map -> macronode_count; i++)
-  {
-    macros[map -> macronodes[i] -> id] = map -> macronodes[i];
-  }
-  free(map -> macronodes);
-  map -> macronodes = macros;
 
   // Agrego las referencias de los macro nodos a los nodos
 
@@ -198,19 +155,6 @@ static void map_macronodes_init(Map* map, char* macronodes_file)
   }
 }
 
-// crea la matriz que dice si un vuelo pertenecia a la planificacion base
-static void map_pb_matrix_init(Map* map)
-{
-  // La creo vacia por ahora
-  map -> original_flights = malloc(sizeof(uint16_t*) * map -> macronode_count);
-
-  // Creo sus subarreglos
-  for (int i = 0; i < map -> macronode_count; i++)
-  {
-    map -> original_flights[i] = calloc(map -> macronode_count, sizeof(uint16_t));
-  }
-}
-
 /** libera los recursos asociados a un nodo */
 static void node_destroy(Node* node)
 {
@@ -228,6 +172,97 @@ static void macronode_destroy(Macronode* macronode)
   free(macronode);
 }
 
+/** Crea las matrices de costos y distancias a partir del archivo */
+static void map_costs_init(Map* map, char* costs_file)
+{
+  // Inicializo las matrices de Mnodos X Mnodos X airplanes
+  map -> costs = malloc(sizeof(double*) * map -> macronode_count);
+  map -> distances = malloc(sizeof(double*) * map -> macronode_count);
+
+  // Les pongo valor inicial infinito
+  for (int i = 0; i < map -> macronode_count; i++)
+  {
+    map -> costs[i] = malloc(sizeof(double) * map -> macronode_count);
+    map -> distances[i] = malloc(sizeof(double) * map -> macronode_count);
+    for (int j = 0; j < map -> macronode_count; j++)
+    {
+      map -> costs[i][j] = INFINITY;
+      map -> distances[i][j] = INFINITY;
+    }
+  }
+
+  // Leo el archivo y completo las matrices
+  FILE* costs_f = fopen(costs_file, "r");
+  int costs_count;
+  fscanf(costs_f, "%d", &costs_count);
+
+  for (int i = 0; i < costs_count; i++)
+  {
+    int m1;
+    int m2;
+    double cost;
+    double dist;
+    fscanf(costs_f, "%d %d %lf %lf", &m1, &m2, &cost, &dist);
+
+    map -> costs[m1][m2] = cost;
+    map -> distances[m1][m2] = dist;
+  }
+
+  // Cierro el archivo
+  fclose(costs_f);
+}
+
+/** Lee la planificacion base y almacena los vuelos que estaba originalmente */
+static void map_add_original_flights(Map* map, char* PB_file)
+{
+  // Creo la matriz
+  map -> original_flights = malloc(sizeof(int*) * map -> macronode_count);
+  for (int i = 0; i < map -> macronode_count; i++)
+  {
+    map -> original_flights[i] = malloc(sizeof(int) * map -> macronode_count);
+    for (int j = 0; j < map -> macronode_count; j++)
+    {
+      // Inicializo en -1 por lo que no esta en ningun vuelo
+      map -> original_flights[i][j] = -1;
+    }
+  }
+
+  // Leo el archivo
+  FILE* PB_f = fopen(PB_file, "r");
+
+  // Leo la planificacion base
+  for (int a = 0; a < airplanes_count; a++)
+  {
+    // Leo el numero de nodos de la ruta
+    int size;
+    fscanf(PB_f, "%d", &size);
+
+    // Leo el primer nodo
+    int n_ant;
+    fscanf(PB_f, "%d", &n_ant);
+
+    // Itero leyendo los nodos
+    int n_act;
+    for (int n = 0; n < size; n++)
+    {
+      // Leo el indice del nodo
+      fscanf(PB_f, "%d", &n_act);
+
+      // Obtengo los nodos de los indices que lei
+      Node* N_ant = map -> nodes[n_ant];
+      Node* N_act = map -> nodes[n_act];
+
+      // Agrego el vuelo a la matriz
+      map -> original_flights[N_ant -> father -> id][N_act -> father -> id] = a;
+
+      // Cambio el nodo anterior
+      n_ant = n_act;
+    }
+  }
+
+  // Cierro el archivo
+  fclose(PB_f);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //                        metodos publicos                                   //
@@ -235,19 +270,19 @@ static void macronode_destroy(Macronode* macronode)
 
 
 /** Metodo que parsea el input y crea el mapa completo */
-Map* map_init(char* map_path, char* airplanes_path, char* macronodes_file)
+Map* map_init(char* map_path, char* airplanes_path, char* macronodes_file, char* costs_file, char* PB_file)
 {
   // Creo el mapa
   Map* map = malloc(sizeof(Map));
 
-  // Creo los nodos
+  // Creo los nodos y los macronodos
   map_nodes_init(map, map_path, airplanes_path);
 
-  // creo los macro nodos
-  map_macronodes_init(map, macronodes_file);
+  // Leo el archivo de costos
+  map_costs_init(map, costs_file);
 
-  // creo la matriz de PB
-  map_pb_matrix_init(map);
+  // Leo la planificacion base
+  map_add_original_flights(map, PB_file);
 
   return map;
 }
@@ -292,6 +327,15 @@ void map_destroy(Map* map)
     free(map -> airplanes[i]);
   }
   free(map -> airplanes);
+
+  // Libero matrices de costos y distancias
+  for (int i = 0; i < map -> macronode_count; i++)
+  {
+    free(map -> costs[i]);
+    free(map -> distances[i]);
+  }
+  free(map -> costs);
+  free(map -> distances);
 
   // libero el mapa
   free(map);
