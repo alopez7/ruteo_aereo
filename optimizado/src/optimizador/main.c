@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
   else
   {
     printf("Modo de uso:\n");
-    printf("[./optimizador] [orders_file] [airplanes_file] [PB_file] [macronodes_file](-ow)\n");
+    printf("[./optimizador] [orders_file] [airplanes_file] [PB_file] [costs_file](-ow)\n");
     return 0;
   }
   // Pongo una seed aleatoria al random del programa
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
           if (solution[pos] > 0)
           {
             route_print(ans -> routes[i][j], detail_output);
-            fprintf(detail_output, "Utility: %lf\n", utility(ans -> routes[i][j]));
+            fprintf(detail_output, "Utility: %lf\n", utility(ans -> routes[i][j], ans -> map));
           }
           pos += 1;
         }

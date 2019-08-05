@@ -1,8 +1,8 @@
 /* Copyright 2017, Gurobi Optimization, Inc. */
- 
+
 #ifndef _GUROBI_C_H
 #define _GUROBI_C_H
- 
+
 #include <stdio.h>
 
 typedef struct _GRBmodel GRBmodel;

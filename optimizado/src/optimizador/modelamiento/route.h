@@ -112,22 +112,22 @@ void bp_destroy(BP* bp_destroy);
 // FUNCIONES QUE ALTERAN LAS RUTAS Y CAMBIAN LA FUNCION OBJETIVO RAPIDA
 
 /** Inserta un nodo en la posicion siguiente al lnodo dado */
-void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node);
+void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node, Map* map);
 
 /** Desconecta el l_nodo de sus hermanos y deja a sus hermanos conectados */
-void l_node_pop(Route* route, LNode* l_node);
+void l_node_pop(Route* route, LNode* l_node, Map* map);
 
 /** Intercambia dos nodos dentro de una ruta */
-void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2);
+void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2, Map* map);
 
 /** Inserta una subruta en la ruta en la posicion dada */
-void sub_route_insert_next(Route* route, LNode* position, LNode* pickup);
+void sub_route_insert_next(Route* route, LNode* position, LNode* pickup, Map* map);
 
 /** Elimina una subruta de la ruta */
-void sub_route_pop(Route* route, LNode* pickup);
+void sub_route_pop(Route* route, LNode* pickup, Map* map);
 
 /** Intercambia dos subrutas truncadas */
-void sub_route_swap(Route* route, LNode* ln1, LNode* ln2);
+void sub_route_swap(Route* route, LNode* ln1, LNode* ln2, Map* map);
 
 
 
@@ -152,13 +152,13 @@ void print_objective_function(Route* route, Map* map);
 double fast_of(Route* route, Map* map);
 
 /** Calcula la utilidad de la ruta */
-double utility(Route* route);
+double utility(Route* route, Map* map);
 
 /** Calcula la utilidad de la ruta */
-void print_utility(Route* route);
+void print_utility(Route* route, Map* map);
 
 /** Ajusta los tiempos de una ruta y determina si es factible */
-bool assign_time(Route* route);
+bool assign_time(Route* route, Map* map);
 
 /** Asigna las cargas de manera greedy, y si no se puede optimiza */
 bool assign_weights(Route* route);

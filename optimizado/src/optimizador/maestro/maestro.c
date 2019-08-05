@@ -36,7 +36,7 @@ Route** create_empty_routes(ANS* ans)
     while (solution[k] -> nodes -> start -> next -> node -> node_type != END)
     {
       // Elimino el primer pedido
-      l_node_pop(solution[k], solution[k] -> nodes -> start -> next);
+      l_node_pop(solution[k], solution[k] -> nodes -> start -> next, ans -> map);
     }
     // Ahora es una ruta vacia
     solution[k] -> objective_function = objective_function(solution[k], ans -> map);
@@ -51,6 +51,12 @@ Route** create_initial_routes(ANS* ans)
 {
   // Obtengo una ruta vacia para cada avion (solo start y end)
   Route** routes = create_empty_routes(ans);
+
+  for (int r = 0; r < airplanes_count; r++)
+  {
+    printf("Ruta %d vacia\n", r);
+    route_print(routes[r], stdout);
+  }
 
   // Creo un arreglo con todos los pedidos (arreglo de pedidos pendientes)
   int unnasigned = order_count;
@@ -92,31 +98,31 @@ Route** create_initial_routes(ANS* ans)
         l_node_order_fill(pickup, unassigned_orders[p]);
 
         // Inserto el pedido al final
-        l_node_insert_next(routes[i], position, pickup);
-        l_node_insert_next(routes[i], pickup, delivery);
+        l_node_insert_next(routes[i], position, pickup, ans -> map);
+        l_node_insert_next(routes[i], pickup, delivery, ans -> map);
 
         // Calculo el costo de la insercion (solo costos de viaje)
-        double cost = 0;
-        cost += distance(position -> node -> father, pickup -> node -> father);
-        cost += distance(pickup -> node -> father, delivery -> node -> father);
-        cost += distance(delivery -> node -> father, delivery -> next -> node -> father);
+        double cost_ = 0;
+        cost_ += cost(position -> node -> father, pickup -> node -> father, ans -> map);
+        cost_ += cost(pickup -> node -> father, delivery -> node -> father, ans -> map);
+        cost_ += cost(delivery -> node -> father, delivery -> next -> node -> father, ans -> map);
 
         // Si la ruta es valida
-        if (assign_time(routes[i]) && assign_weights(routes[i]))
+        if (assign_time(routes[i], ans -> map) && assign_weights(routes[i]))
         {
           // Si mejore el costo
-          if (cost < best_cost)
+          if (cost_ < best_cost)
           {
             // Actualizo los mejores valores
             best = unassigned_orders[p];
-            best_cost = cost;
+            best_cost = cost_;
             best_id = p;
           }
         }
 
         // Deshago la insercion
-        l_node_pop(routes[i], delivery);
-        l_node_pop(routes[i], pickup);
+        l_node_pop(routes[i], delivery, ans -> map);
+        l_node_pop(routes[i], pickup, ans -> map);
       }
 
       // Si pude insertar algun nodo
@@ -125,8 +131,8 @@ Route** create_initial_routes(ANS* ans)
         // Inserto el pedido al final
         l_node_order_fill(pickup, best);
         LNode* position = routes[i] -> nodes -> end -> last;
-        l_node_insert_next(routes[i], position, pickup);
-        l_node_insert_next(routes[i], pickup, delivery);
+        l_node_insert_next(routes[i], position, pickup, ans -> map);
+        l_node_insert_next(routes[i], pickup, delivery, ans -> map);
 
         // Elimino el pedido de los pendientes
         for (int j = best_id; j < unnasigned - 1; j++)
@@ -159,7 +165,7 @@ Route** create_initial_routes(ANS* ans)
   // Dejo los valores de las rutas correctos
   for (int i = 0; i < airplanes_count; i++)
   {
-    assign_time(routes[i]);
+    assign_time(routes[i], ans -> map);
     assign_weights(routes[i]);
     routes[i] -> objective_function = objective_function(routes[i], ans -> map);
     routes[i] -> fast_of = fast_of(routes[i], ans -> map);
@@ -201,9 +207,12 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   int position = 0;
 
   // R1
+  printf("R1\n");
+  route_print(ans -> bp -> routes[airplane_id], stdout);
 
   // La primera ruta es copia de la planificacion base eliminando pedidos de costo 0
   Route* r1 = route_copy(ans -> bp -> routes[airplane_id], ans -> map);
+  printf("R1\n");
 
   // Ajusto sus cargas
   assign_weights(r1);
@@ -215,8 +224,8 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
     LNode* next = actual -> next;
     if (next -> delta_weight == 0)
     {
-      l_node_pop(r1, next);
-      l_node_pop(r1, next -> pair);
+      l_node_pop(r1, next, ans -> map);
+      l_node_pop(r1, next -> pair, ans -> map);
       free(next -> pair);
       free(next);
     }
@@ -228,7 +237,7 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
 
   // Si es una ruta valida
   bool destroy_r1 = false;
-  if (assign_time(r1) && assign_weights(r1))
+  if (assign_time(r1, ans -> map) && assign_weights(r1))
   {
     // Agrego esta ruta
     routes[position] = r1;
@@ -242,6 +251,7 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
 
 
   // R2
+  printf("R2\n");
 
   // Tomo la ruta anterior y le hago drop_and_add
   Route* r2 = initial_drop_and_add(r1, ans);
@@ -249,7 +259,7 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
 
   // Si es una ruta valida
   bool destroy_r2 = false;
-  if (assign_time(r2) && assign_weights(r2))
+  if (assign_time(r2, ans -> map) && assign_weights(r2))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior
@@ -278,12 +288,13 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   }
 
   // R3
+  printf("R3\n");
 
   // Le hago swap (especial)
   Route* r3 = initial_swap(r2, ans);
 
   // Si es una ruta valida
-  if (assign_time(r3) && assign_weights(r3))
+  if (assign_time(r3, ans -> map) && assign_weights(r3))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior
@@ -315,6 +326,7 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   if (destroy_r2) route_destroy(r2);
 
   // R4
+  printf("R4\n");
 
   // Tomo la ruta vacia (solo inicio y fin)
   Route* r4 = route_copy(ans -> bp -> routes[airplane_id], ans -> map);
@@ -322,14 +334,14 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   while (r4 -> nodes -> start -> next -> node -> node_type != END)
   {
     // Elimino el primer pedido
-    l_node_pop(r4, r4 -> nodes -> start -> next);
+    l_node_pop(r4, r4 -> nodes -> start -> next, ans -> map);
   }
   // Ahora es una ruta vacia
   r4 -> objective_function = objective_function(r4, ans -> map);
   r4 -> fast_of = fast_of(r4, ans -> map);
 
   // Si es una ruta valida
-  if (assign_time(r4) && assign_weights(r4))
+  if (assign_time(r4, ans -> map) && assign_weights(r4))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior
@@ -358,13 +370,14 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   }
 
   // R5
+  printf("R5\n");
 
   // Ocupo la ruta generada aleatoria de la funcion create_initial_routes
   Route* r5 = route_copy(initial_route, ans -> map);
 
   // Si es una ruta valida
   bool destroy_r5 = false;
-  if (assign_time(r5) && assign_weights(r5))
+  if (assign_time(r5, ans -> map) && assign_weights(r5))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior
@@ -393,13 +406,14 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   }
 
   // R6
+  printf("R6\n");
 
   // Tomo la ruta anterior y le hago drop_and_add y luego swap
   Route* r6 = initial_drop_and_add(r5, ans);
 
   // Si es una ruta valida
   bool destroy_r6 = false;
-  if (assign_time(r6) && assign_weights(r6))
+  if (assign_time(r6, ans -> map) && assign_weights(r6))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior
@@ -428,10 +442,11 @@ void generate_initial_routes(ANS* ans, int airplane_id, Route* initial_route)
   }
 
   // R7
+  printf("R7\n");
   Route* r7 = initial_swap(r6, ans);
 
   // Si es una ruta valida
-  if (assign_time(r7) && assign_weights(r7))
+  if (assign_time(r7, ans -> map) && assign_weights(r7))
   {
     bool repeated = false;
     // Si no tiene valores iguales a una anterior

@@ -38,7 +38,7 @@ struct ans
 //////////////////////////////////////////////////////////////////////////
 
 /** Crea la estructura ANS del programa */
-ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath, char* macronode_file);
+ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath, char* costs_file);
 
 /** Libera la memoria asociada */
 void ans_destroy(ANS* ans);

@@ -34,10 +34,6 @@ struct macronode
 {
   /** ID del macro nodo */
   int id;
-  /** posicion x */
-  double X;
-  /** posicion y */
-  double Y;
   /** cantidad de nodos que tiene */
   int node_count;
   /** arreglo de nodos */
@@ -51,10 +47,6 @@ struct node
 {
   /** ID del nodo */
   int id;
-  /** posicion x */
-  double X;
-  /** posicion y */
-  double Y;
   /** Determina si es nodo pickup, delivery, start o end */
   Type node_type;
   /** demora en pickup o delivery */
@@ -116,8 +108,6 @@ struct map
   Macronode** macronodes;
   /** Arreglo con las aviones */
   Airplane** airplanes;
-  /** matriz de MNodo X MNodo que dice en que ruta esta originalmente el vuelo (-1 = ninguno)*/
-  int** original_flights;
   /** Matriz de MxM costos de viaje entre macronodos */
   double** costs;
   /** Matriz de MxM tiempos de viaje entre macronodos */
@@ -133,13 +123,19 @@ typedef struct map Map;
 
 
 /** Metodo que parsea el input y crea el mapa completo */
-Map* map_init(char* map_path, char* airplanes_path, char* macronodes_file, char* costs_file, char* PB_file);
+Map* map_init(char* orders_path, char* airplanes_path, char* costs_file);
 
 /** Metodo que libera toda la memoria asociada el mapa */
 void map_destroy(Map* map);
 
-/** distancia euclideana de un macro nodo a otro */
-double distance(Macronode* macro1, Macronode* macro2);
+/** Distancia entre macronodos */
+double distance(Macronode* macro1, Macronode* macro2, Map* map);
 
-/** distancia euclideana de un macro nodo a otro */
-double print_distance(Macronode* macro1, Macronode* macro2);
+/** Distancia entre macronodos */
+double print_distance(Macronode* macro1, Macronode* macro2, Map* map);
+
+/** Costo entre macronodos */
+double cost(Macronode* macro1, Macronode* macro2, Map* map);
+
+/** Costo entre macronodos */
+double print_cost(Macronode* macro1, Macronode* macro2, Map* map);

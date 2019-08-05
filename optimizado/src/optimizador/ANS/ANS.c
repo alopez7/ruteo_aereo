@@ -21,13 +21,13 @@ double random_bounded(double bound)
 }
 
 /** Crea la estructura ANS del programa */
-ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath, char* macronodes_file)
+ANS* ans_init(char* orders_filepath, char* airplanes_filepath, char* bp_filepath, char* costs_file)
 {
   // Creo al ans
   ANS* ans = malloc(sizeof(ANS));
 
   // Inicializo el mapa
-  ans -> map = map_init(orders_filepath, airplanes_filepath, macronodes_file);
+  ans -> map = map_init(orders_filepath, airplanes_filepath, costs_file);
 
   // Inicializo la planificacion base
   ans -> bp = bp_init(bp_filepath, ans -> map);
@@ -162,7 +162,7 @@ static bool improved(Route* route, ANS* ans, double best_of)
   if (route -> fast_of > best_of)
   {
     // Veo si la ruta es valida
-    if (assign_weights(route) && assign_time(route))
+    if (assign_weights(route) && assign_time(route, ans -> map))
     {
       // Si mejoro, retorno true
       route -> objective_function = objective_function(route, ans -> map);
@@ -176,11 +176,11 @@ static bool improved(Route* route, ANS* ans, double best_of)
 }
 
 /** Revisa que la asignacion del nodo puede hacerse en el tiempo dado */
-static bool is_time_consistent(LNode* ln1, LNode* ln2)
+static bool is_time_consistent(LNode* ln1, LNode* ln2, ANS* ans)
 {
   // Compruebo que al insertar ln2 a la derecha de ln1 puedan calzar los tiempos
   double start = ln1 -> node -> start_time;
-  double dist = distance(ln1 -> node -> father, ln2 -> node -> father);
+  double dist = distance(ln1 -> node -> father, ln2 -> node -> father, ans -> map);
   double end = ln2 -> node -> end_time;
 
   // Optimistamente puedo partir justo cuando comienza el start del primer nodo
@@ -207,19 +207,19 @@ static double single_insert(Route* route, LNode* pickup_l_node, double best_of, 
   for (LNode* ln = route -> nodes -> start; ln -> next; ln = ln -> next)
   {
     // Compruebo si voy a tener una problema de tiempo antes de insertar
-    if (is_time_consistent(ln, pickup_l_node) && is_time_consistent(pickup_l_node, ln -> next))
+    if (is_time_consistent(ln, pickup_l_node, ans) && is_time_consistent(pickup_l_node, ln -> next, ans))
     {
       // Inserto el pickup
-      l_node_insert_next(route, ln, pickup_l_node);
+      l_node_insert_next(route, ln, pickup_l_node, ans -> map);
 
       // Itero sobre los nodos restantes desde el recien insertado
       for (LNode* ln2 = pickup_l_node; ln2 -> next; ln2 = ln2 -> next)
       {
         // Compruebo consistencia de tiempos
-        if (is_time_consistent(ln2, delivery_l_node) && is_time_consistent(delivery_l_node, ln2 -> next))
+        if (is_time_consistent(ln2, delivery_l_node, ans) && is_time_consistent(delivery_l_node, ln2 -> next, ans))
         {
           // Inserto el delivery
-          l_node_insert_next(route, ln2, delivery_l_node);
+          l_node_insert_next(route, ln2, delivery_l_node, ans -> map);
 
           // Comparo
           if (improved(route, ans, best_of))
@@ -230,12 +230,12 @@ static double single_insert(Route* route, LNode* pickup_l_node, double best_of, 
           }
 
           // Deshago la asignacion del delivery
-          l_node_pop(route, delivery_l_node);
+          l_node_pop(route, delivery_l_node, ans -> map);
         }
       }
 
       // Deshago la asignacion del pickup
-      l_node_pop(route, pickup_l_node);
+      l_node_pop(route, pickup_l_node, ans -> map);
     }
   }
 
@@ -263,16 +263,16 @@ static double single_swap(Route* route, LNode* pickup_l_node, double best_of, AN
     if (ln -> node -> node_type == PICKUP)
     {
       // Inserto el pickup
-      l_node_insert_next(route, ln, pickup_l_node);
+      l_node_insert_next(route, ln, pickup_l_node, ans -> map);
 
       // Saco el pickup anterior
-      l_node_pop(route, ln);
+      l_node_pop(route, ln, ans -> map);
 
       // Acto seguido inserto el delivery
-      l_node_insert_next(route, ln -> pair, delivery_l_node);
+      l_node_insert_next(route, ln -> pair, delivery_l_node, ans -> map);
 
       // Saco el delivery anterior
-      l_node_pop(route, ln -> pair);
+      l_node_pop(route, ln -> pair, ans -> map);
 
       if (improved(route, ans, best_of))
       {
@@ -283,16 +283,16 @@ static double single_swap(Route* route, LNode* pickup_l_node, double best_of, AN
 
       // Deshago los swaps:
       // Inserto el pickup viejo
-      l_node_insert_next(route, pickup_l_node, ln);
+      l_node_insert_next(route, pickup_l_node, ln, ans -> map);
 
       // Saco el pickup insertado
-      l_node_pop(route, pickup_l_node);
+      l_node_pop(route, pickup_l_node, ans -> map);
 
       // Acto seguido inserto el delivery viejo
-      l_node_insert_next(route, delivery_l_node, ln -> pair);
+      l_node_insert_next(route, delivery_l_node, ln -> pair, ans -> map);
 
       // Saco el delivery insertado
-      l_node_pop(route, delivery_l_node);
+      l_node_pop(route, delivery_l_node, ans -> map);
     }
   }
 
@@ -427,8 +427,8 @@ void op_drop_and_add(Route* route, ANS* ans)
   {
     pickup_l_node -> node = best_order -> pickup;
     pickup_l_node -> pair -> node = best_order -> delivery;
-    l_node_insert_next(route, best_start, pickup_l_node);
-    l_node_insert_next(route, best_end, pickup_l_node -> pair);
+    l_node_insert_next(route, best_start, pickup_l_node, ans -> map);
+    l_node_insert_next(route, best_end, pickup_l_node -> pair, ans -> map);
     route -> objective_function = best_of;
   }
   else
@@ -493,10 +493,10 @@ void op_swap(Route* route, ANS* ans)
   if (best_of > old_of)
   {
     l_node_order_fill(pickup_l_node, best_order);
-    l_node_insert_next(route, best_start, pickup_l_node);
-    l_node_pop(route, best_start);
-    l_node_insert_next(route, best_end, pickup_l_node -> pair);
-    l_node_pop(route, best_end);
+    l_node_insert_next(route, best_start, pickup_l_node, ans -> map);
+    l_node_pop(route, best_start, ans -> map);
+    l_node_insert_next(route, best_end, pickup_l_node -> pair, ans -> map);
+    l_node_pop(route, best_end, ans -> map);
     route -> objective_function = best_of;
   }
   else
@@ -540,9 +540,9 @@ void op_irre(Route* route, ANS* ans)
         if (ln2 -> node -> node_type == PICKUP)
         {
           // Intercambio los pickups
-          l_nodes_swap(route, ln, ln2);
+          l_nodes_swap(route, ln, ln2, ans -> map);
           // Intercambio los deliverys
-          l_nodes_swap(route, ln -> pair, ln2 -> pair);
+          l_nodes_swap(route, ln -> pair, ln2 -> pair, ans -> map);
 
 
           // Si mejore, actualizo los datos
@@ -556,8 +556,8 @@ void op_irre(Route* route, ANS* ans)
           }
 
           // Deshago el intercambio
-          l_nodes_swap(route, ln2, ln);
-          l_nodes_swap(route, ln2 -> pair, ln -> pair);
+          l_nodes_swap(route, ln2, ln, ans -> map);
+          l_nodes_swap(route, ln2 -> pair, ln -> pair, ans -> map);
         }
       }
     }
@@ -567,10 +567,10 @@ void op_irre(Route* route, ANS* ans)
   if (best_of > old_of)
   {
     // Intercambio los pickups
-    l_nodes_swap(route, best_pickup1, best_pickup2);
+    l_nodes_swap(route, best_pickup1, best_pickup2, ans -> map);
 
     // Intercambio los deliverys
-    l_nodes_swap(route, best_pickup1 -> pair, best_pickup2 -> pair);
+    l_nodes_swap(route, best_pickup1 -> pair, best_pickup2 -> pair, ans -> map);
 
     // Dejo la funcion objetivo correcta
     route -> objective_function = best_of;
@@ -608,10 +608,10 @@ void op_irrr(Route* route, ANS* ans)
       // Saco el pickup y el delivery guardando sus posiciones originales
       // Saco el pickup
       LNode* original_start = pickup_ln -> last;
-      l_node_pop(route, pickup_ln);
+      l_node_pop(route, pickup_ln, ans -> map);
       // Saco el delivery
       LNode* original_end = delivery_ln -> last;
-      l_node_pop(route, delivery_ln);
+      l_node_pop(route, delivery_ln, ans -> map);
 
       // Inserto el pickup y el delivery en sus mejores posiciones en la ruta
       double actual_of = single_insert(route, pickup_ln, best_of, ans);
@@ -626,8 +626,8 @@ void op_irrr(Route* route, ANS* ans)
       }
 
       // Vuelvo a poner el pedido en su posicion original (en el orden contrario)
-      l_node_insert_next(route, original_end, delivery_ln);
-      l_node_insert_next(route, original_start, pickup_ln);
+      l_node_insert_next(route, original_end, delivery_ln, ans -> map);
+      l_node_insert_next(route, original_start, pickup_ln, ans -> map);
     }
   }
 
@@ -635,12 +635,12 @@ void op_irrr(Route* route, ANS* ans)
   if (best_of > old_of)
   {
     // Saco los nodos de sus posiciones
-    l_node_pop(route, best_pickup);
-    l_node_pop(route, best_pickup -> pair);
+    l_node_pop(route, best_pickup, ans -> map);
+    l_node_pop(route, best_pickup -> pair, ans -> map);
 
     // Los inserto donde deben estar
-    l_node_insert_next(route, best_start, best_pickup);
-    l_node_insert_next(route, best_end, best_pickup -> pair);
+    l_node_insert_next(route, best_start, best_pickup, ans -> map);
+    l_node_insert_next(route, best_end, best_pickup -> pair, ans -> map);
 
     // Hago que la funcion objetivo sea consistente
     route -> objective_function = best_of;
@@ -683,7 +683,7 @@ void op_irmre(Route* route, ANS* ans)
            ln2 -> open_orders_count == ln2 -> pair -> open_orders_count - 1)
         {
           // Intercambio las subrutas
-          sub_route_swap(route, ln, ln2);
+          sub_route_swap(route, ln, ln2, ans -> map);
 
           // Si mejore, actualizo los mejores resultados
           if (improved(route, ans, best_of))
@@ -694,7 +694,7 @@ void op_irmre(Route* route, ANS* ans)
           }
 
           // Restauro las posiciones
-          sub_route_swap(route, ln2, ln);
+          sub_route_swap(route, ln2, ln, ans -> map);
         }
       }
     }
@@ -703,7 +703,7 @@ void op_irmre(Route* route, ANS* ans)
   // Si mejoro, dejo los mejores resultados en la ruta
   if (best_of > old_of)
   {
-    sub_route_swap(route, best_pickup1, best_pickup2);
+    sub_route_swap(route, best_pickup1, best_pickup2, ans -> map);
     // Dejo consistente la funcion objetivo
     route -> objective_function = best_of;
   }
@@ -740,13 +740,13 @@ void op_irmrr(Route* route, ANS* ans)
       LNode* original_position = ln -> last;
 
       // Saco la subruta
-      sub_route_pop(route, ln);
+      sub_route_pop(route, ln, ans -> map);
 
       // Itero sobre la ruta para insertar la subruta
       for (LNode* ln2 = route -> nodes -> start; ln2 -> next; ln2 = ln2 -> next)
       {
         // Inserto la subruta truncada
-        sub_route_insert_next(route, ln2, ln);
+        sub_route_insert_next(route, ln2, ln, ans -> map);
 
         // Si mejore, actualizo los datos
         if (improved(route, ans, best_of))
@@ -757,19 +757,19 @@ void op_irmrr(Route* route, ANS* ans)
         }
 
         // Deshago la insercion
-        sub_route_pop(route, ln);
+        sub_route_pop(route, ln, ans -> map);
       }
 
       // Vuelvo a poner la subruta en su lugar inicial
-      sub_route_insert_next(route, original_position, ln);
+      sub_route_insert_next(route, original_position, ln, ans -> map);
     }
   }
 
   // Si mejore, muevo la ruta a su mejor posicion
   if (best_of > old_of)
   {
-    sub_route_pop(route, best_pickup);
-    sub_route_insert_next(route, best_start, best_pickup);
+    sub_route_pop(route, best_pickup, ans -> map);
+    sub_route_insert_next(route, best_start, best_pickup, ans -> map);
     // Dejo consistente la funcion objetivo
     route -> objective_function = best_of;
   }
@@ -806,8 +806,8 @@ void op_delete(Route* route, ANS* ans)
         LNode* deli = pick -> pair;
 
         // Elimino el pedido
-        l_node_pop(route, pick);
-        l_node_pop(route, deli);
+        l_node_pop(route, pick, ans -> map);
+        l_node_pop(route, deli, ans -> map);
 
         // Si mejore, actualizo los valores del mejor resultado
         if (improved(route, ans, best_of))
@@ -819,8 +819,8 @@ void op_delete(Route* route, ANS* ans)
         }
 
         // Devuelvo los nodos (En el orden contrario)
-        l_node_insert_next(route, deli -> last, deli);
-        l_node_insert_next(route, pick -> last, pick);
+        l_node_insert_next(route, deli -> last, deli, ans -> map);
+        l_node_insert_next(route, pick -> last, pick, ans -> map);
       }
     }
 
@@ -828,8 +828,8 @@ void op_delete(Route* route, ANS* ans)
     if (iter)
     {
       // Elimino el pedido
-      l_node_pop(route, best_pickup);
-      l_node_pop(route, best_delivery);
+      l_node_pop(route, best_pickup, ans -> map);
+      l_node_pop(route, best_delivery, ans -> map);
       // Libero la memoria
       free(best_pickup -> pair);
       free(best_pickup);
@@ -891,7 +891,7 @@ Route* initial_swap(Route* base, ANS* ans)
 int initial_insert(Route* route, int unnasigned, Order** unassigned_orders, ANS* ans)
 {
   // Primero calculo la utilidad de la ruta
-  double best_utility = utility(route);
+  double best_utility = utility(route, ans -> map);
 
   // Itero sobre los pedidos
   int i = 0;
@@ -913,25 +913,25 @@ int initial_insert(Route* route, int unnasigned, Order** unassigned_orders, ANS*
     for (LNode* ln = route -> nodes -> start; ln -> next; ln = ln -> next)
     {
       // Si es consistente con los tiempos
-      if (is_time_consistent(ln, pickup) && is_time_consistent(pickup, ln -> next))
+      if (is_time_consistent(ln, pickup, ans) && is_time_consistent(pickup, ln -> next, ans))
       {
         // Inserto el pickup
-        l_node_insert_next(route, ln, pickup);
+        l_node_insert_next(route, ln, pickup, ans -> map);
 
         // Ahora itero sobre el resto de la ruta para insertar el delivery
         for (LNode* ln2 = pickup; ln2 -> next; ln2 = ln2 -> next)
         {
           // Si es consistente en tiempos
-          if (is_time_consistent(ln2, delivery) && is_time_consistent(delivery, ln2 -> next))
+          if (is_time_consistent(ln2, delivery, ans) && is_time_consistent(delivery, ln2 -> next, ans))
           {
             // Inserto el delivery
-            l_node_insert_next(route, ln2, delivery);
+            l_node_insert_next(route, ln2, delivery, ans -> map);
 
             // Si la ruta obtenida es valida en tiempos y en pesos
-            if (assign_time(route) && assign_weights(route))
+            if (assign_time(route, ans -> map) && assign_weights(route))
             {
               // Calculo su utilidad
-              int util = utility(route);
+              int util = utility(route, ans -> map);
 
               // Si su utilidad es mayor a la anterior
               if (util > best_utility)
@@ -946,12 +946,12 @@ int initial_insert(Route* route, int unnasigned, Order** unassigned_orders, ANS*
             }
 
             // Saco el delivery
-            l_node_pop(route, delivery);
+            l_node_pop(route, delivery, ans -> map);
           }
         }
 
         // Saco el pickup
-        l_node_pop(route, pickup);
+        l_node_pop(route, pickup, ans -> map);
       }
     }
 
@@ -959,8 +959,8 @@ int initial_insert(Route* route, int unnasigned, Order** unassigned_orders, ANS*
     if (best_p)
     {
       // Los pongo en sus posiciones
-      l_node_insert_next(route, best_p, pickup);
-      l_node_insert_next(route, best_d, delivery);
+      l_node_insert_next(route, best_p, pickup, ans -> map);
+      l_node_insert_next(route, best_d, delivery, ans -> map);
 
       // Elimino la orden del arreglo
       for (int j = i + 1; j < unnasigned; j++)
@@ -1026,7 +1026,7 @@ Route* initialize(ANS* ans, Route* original_route)
     {
       order_n++;
       Node* node = ln -> node;
-      double dist = distance(ln -> last -> node -> father, node -> father);
+      double dist = cost(ln -> last -> node -> father, node -> father, ans -> map);
       ln -> utility = (node -> fee - node -> dual_pi) * node -> total_weight - dist;
     }
   }
@@ -1059,8 +1059,8 @@ Route* initialize(ANS* ans, Route* original_route)
     LNode* delivery_position = delivery -> last;
 
     // Elimino el pedido
-    l_node_pop(route, pickup);
-    l_node_pop(route, delivery);
+    l_node_pop(route, pickup, ans -> map);
+    l_node_pop(route, delivery, ans -> map);
 
     // Si mejore, actualizo la mejor fo y libero los l_nodos
     if (improved(route, ans, best_of))
@@ -1072,8 +1072,8 @@ Route* initialize(ANS* ans, Route* original_route)
     // Si no mejore, deshago la eliminacion
     else
     {
-      l_node_insert_next(route, pickup_position, pickup);
-      l_node_insert_next(route, delivery_position, delivery);
+      l_node_insert_next(route, pickup_position, pickup, ans -> map);
+      l_node_insert_next(route, delivery_position, delivery, ans -> map);
     }
   }
 
@@ -1147,7 +1147,7 @@ Route* run(ANS* ans, Route* original_route)
     }
   }
 
-  assign_time(route);
+  assign_time(route, ans -> map);
   assign_weights(route);
   route -> objective_function = objective_function(route, ans -> map);
   // Retorno la ruta final

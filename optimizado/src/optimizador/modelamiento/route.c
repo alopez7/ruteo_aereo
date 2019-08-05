@@ -306,7 +306,7 @@ Route* route_copy(Route* route, Map* map)
   else copy -> fast_of = route -> fast_of;
 
   // Veo si es valida
-  route -> valid = assign_time(copy) && assign_weights(copy);
+  route -> valid = assign_time(copy, map) && assign_weights(copy);
 
   // Retorno la copia
   return copy;
@@ -373,6 +373,10 @@ BP* bp_init(char* bp_file_path, Map* map)
 
     // Calculo su funcion objetivo greedy
     bp -> routes[i] -> fast_of = fast_of(bp -> routes[i], map);
+
+    // Asigno pesos y distancias
+    assign_time(bp -> routes[i], map);
+    assign_weights(bp -> routes[i]);
   }
 
   // Cierro el archivo
@@ -396,7 +400,7 @@ void bp_destroy(BP* bp)
 // FUNCIONES QUE ALTERAN LAS RUTAS Y CAMBIAN LA FUNCION OBJETIVO RAPIDA
 
 /** Inserta un nodo en la posicion siguiente al lnodo dado */
-void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node)
+void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node, Map* map)
 {
   LNode* next = original_l_node -> next;
 
@@ -435,10 +439,10 @@ void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node)
 
   /////// Costos de vuelos ///////
   // Elimino el costo de la arista antigua
-  route -> fast_of += distance(original_mn, next_mn);
+  route -> fast_of += cost(original_mn, next_mn, map);
   // Agrego el costo de las aristas nuevas
-  route -> fast_of -= distance(original_mn, new_mn);
-  route -> fast_of -= distance(new_mn, next_mn);
+  route -> fast_of -= cost(original_mn, new_mn, map);
+  route -> fast_of -= cost(new_mn, next_mn, map);
 
   /////// Costos de penalizacion por cancelacion ///////
   // Si estoy cancelando un vuelo de la PB, agrego el costo
@@ -458,7 +462,7 @@ void l_node_insert_next(Route* route, LNode* original_l_node, LNode* new_l_node)
 }
 
 /** Saca el l_node de la lista conectando sus hermanos entre si */
-void l_node_pop(Route* route, LNode* l_node)
+void l_node_pop(Route* route, LNode* l_node, Map* map)
 {
   // Elimino el nodo
   if (l_node -> last)
@@ -490,11 +494,11 @@ void l_node_pop(Route* route, LNode* l_node)
   Macronode* last = l_node -> last -> node -> father;
   Macronode* actual = l_node -> node -> father;
   Macronode* next = l_node -> next -> node -> father;
-  route -> fast_of += distance(last, actual);
-  route -> fast_of += distance(actual, next);
+  route -> fast_of += cost(last, actual, map);
+  route -> fast_of += cost(actual, next, map);
 
   // Agrego el costo de la nueva
-  route -> fast_of -= distance(last, next);
+  route -> fast_of -= cost(last, next, map);
 
   /////// Costos de cancelacion ///////
   // Agrego el costo de cancelacion de los vuelos (si es el caso)
@@ -514,7 +518,7 @@ void l_node_pop(Route* route, LNode* l_node)
 }
 
 /** Intercambia dos nodos dentro de una ruta */
-void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2)
+void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2, Map* map)
 {
   // Caso en que estan pegados
   if (ln2 -> next == ln1)
@@ -551,11 +555,11 @@ void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2)
     Macronode* mn2 = ln2 -> node -> father;
     Macronode* next_M = next -> node -> father;
     // Elimino el costo de los nodos viejos
-    route -> fast_of += distance(last_M, mn1);
-    route -> fast_of += distance(mn2, next_M);
+    route -> fast_of += cost(last_M, mn1, map);
+    route -> fast_of += cost(mn2, next_M, map);
     // Agrego el costo nuevo
-    route -> fast_of -= distance(last_M, mn2);
-    route -> fast_of -= distance(mn1, next_M);
+    route -> fast_of -= cost(last_M, mn2, map);
+    route -> fast_of -= cost(mn1, next_M, map);
 
     /////// Costos de cancelacion ///////
     // Agrego los costos de los vuelos cancelados
@@ -620,15 +624,15 @@ void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2)
     Macronode* mn1 = ln1 -> node -> father;
     Macronode* mn2 = ln2 -> node -> father;
     // Elimino el costo de los nodos viejos
-    route -> fast_of += distance(last1_M, mn1);
-    route -> fast_of += distance(mn1, next1_M);
-    route -> fast_of += distance(last2_M, mn2);
-    route -> fast_of += distance(mn2, next2_M);
+    route -> fast_of += cost(last1_M, mn1, map);
+    route -> fast_of += cost(mn1, next1_M, map);
+    route -> fast_of += cost(last2_M, mn2, map);
+    route -> fast_of += cost(mn2, next2_M, map);
     // Agrego el costo nuevo
-    route -> fast_of -= distance(last1_M, mn2);
-    route -> fast_of -= distance(mn2, next1_M);
-    route -> fast_of -= distance(last2_M, mn1);
-    route -> fast_of -= distance(mn1, next2_M);
+    route -> fast_of -= cost(last1_M, mn2, map);
+    route -> fast_of -= cost(mn2, next1_M, map);
+    route -> fast_of -= cost(last2_M, mn1, map);
+    route -> fast_of -= cost(mn1, next2_M, map);
 
     /////// Costos de cancelacion ///////
     // Agrego los costos de los vuelos cancelados
@@ -669,7 +673,7 @@ void l_nodes_swap(Route* route, LNode* ln1, LNode* ln2)
 }
 
 /** Inserta una subruta en la ruta en la posicion dada */
-void sub_route_insert_next(Route* route, LNode* position, LNode* pickup)
+void sub_route_insert_next(Route* route, LNode* position, LNode* pickup, Map* map)
 {
   // Actualizo los punteros de la subruta a la ruta
   pickup -> last = position;
@@ -697,10 +701,10 @@ void sub_route_insert_next(Route* route, LNode* position, LNode* pickup)
 
   /////// Costos de vuelos ///////
   // Elimino el costo de la arista antigua
-  route -> fast_of += distance(last_mn, next_mn);
+  route -> fast_of += cost(last_mn, next_mn, map);
   // Agrego el costo de las aristas nuevas
-  route -> fast_of -= distance(last_mn, pickup_mn);
-  route -> fast_of -= distance(delivery_mn, next_mn);
+  route -> fast_of -= cost(last_mn, pickup_mn, map);
+  route -> fast_of -= cost(delivery_mn, next_mn, map);
 
   /////// Costos de penalizacion por cancelacion ///////
   // Si estoy cancelando un vuelo de la PB, agrego el costo
@@ -720,7 +724,7 @@ void sub_route_insert_next(Route* route, LNode* position, LNode* pickup)
 }
 
 /** Elimina una subruta de la ruta */
-void sub_route_pop(Route* route, LNode* pickup)
+void sub_route_pop(Route* route, LNode* pickup, Map* map)
 {
   // Variables que ayudan
   LNode* delivery = pickup -> pair;
@@ -744,11 +748,11 @@ void sub_route_pop(Route* route, LNode* pickup)
   Macronode* pickup_mn = pickup -> node -> father;
   Macronode* delivery_mn = pickup -> pair -> node -> father;
   Macronode* next_mn = end -> node -> father;
-  route -> fast_of += distance(last_mn, pickup_mn);
-  route -> fast_of += distance(delivery_mn, next_mn);
+  route -> fast_of += cost(last_mn, pickup_mn, map);
+  route -> fast_of += cost(delivery_mn, next_mn, map);
 
   // Agrego el costo de la nueva
-  route -> fast_of -= distance(last_mn, next_mn);
+  route -> fast_of -= cost(last_mn, next_mn, map);
 
   /////// Costos de cancelacion ///////
   // Agrego el costo de cancelacion de los vuelos (si es el caso)
@@ -768,7 +772,7 @@ void sub_route_pop(Route* route, LNode* pickup)
 }
 
 /** Intercambia dos subrutas truncadas */
-void sub_route_swap(Route* route, LNode* ln1, LNode* ln2)
+void sub_route_swap(Route* route, LNode* ln1, LNode* ln2, Map* map)
 {
   // Caso en que estan pegados
   if (ln2 -> pair -> next == ln1)
@@ -807,13 +811,13 @@ void sub_route_swap(Route* route, LNode* ln1, LNode* ln2)
     Macronode* mne2 = ln2 -> pair -> node -> father;
     Macronode* next_M = next -> node -> father;
     // Elimino el costo de los nodos viejos
-    route -> fast_of += distance(last_M, mns1);
-    route -> fast_of += distance(mne1, mns2);
-    route -> fast_of += distance(mne2, next_M);
+    route -> fast_of += cost(last_M, mns1, map);
+    route -> fast_of += cost(mne1, mns2, map);
+    route -> fast_of += cost(mne2, next_M, map);
     // Agrego el costo nuevo
-    route -> fast_of -= distance(last_M, mns2);
-    route -> fast_of -= distance(mne2, mns1);
-    route -> fast_of -= distance(mne1, next_M);
+    route -> fast_of -= cost(last_M, mns2, map);
+    route -> fast_of -= cost(mne2, mns1, map);
+    route -> fast_of -= cost(mne1, next_M, map);
 
     /////// Costos de cancelacion ///////
     // Agrego los costos de los vuelos cancelados
@@ -880,15 +884,15 @@ void sub_route_swap(Route* route, LNode* ln1, LNode* ln2)
     Macronode* mns2 = ln2 -> node -> father;
     Macronode* mne2 = ln2 -> pair -> node -> father;
     // Elimino el costo de los nodos viejos
-    route -> fast_of += distance(last1_M, mns1);
-    route -> fast_of += distance(mne1, next1_M);
-    route -> fast_of += distance(last2_M, mns2);
-    route -> fast_of += distance(mne2, next2_M);
+    route -> fast_of += cost(last1_M, mns1, map);
+    route -> fast_of += cost(mne1, next1_M, map);
+    route -> fast_of += cost(last2_M, mns2, map);
+    route -> fast_of += cost(mne2, next2_M, map);
     // Agrego el costo nuevo
-    route -> fast_of -= distance(last1_M, mns2);
-    route -> fast_of -= distance(mne2, next1_M);
-    route -> fast_of -= distance(last2_M, mns1);
-    route -> fast_of -= distance(mne1, next2_M);
+    route -> fast_of -= cost(last1_M, mns2, map);
+    route -> fast_of -= cost(mne2, next1_M, map);
+    route -> fast_of -= cost(last2_M, mns1, map);
+    route -> fast_of -= cost(mne1, next2_M, map);
 
     /////// Costos de cancelacion ///////
     // Agrego los costos de los vuelos cancelados
@@ -997,7 +1001,7 @@ double objective_function(Route* route, Map* map)
     }
 
     // Resto distancias
-    distances += distance(ln -> node -> father, ln -> next -> node -> father);
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
   }
   // agrego el dual gamma
   duals += route -> airplane -> dual_gamma;
@@ -1046,7 +1050,7 @@ void print_objective_function(Route* route, Map* map)
     }
 
     // Resto distancias
-    distances += distance(ln -> node -> father, ln -> next -> node -> father);
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
   }
   // agrego el dual gamma
   duals += route -> airplane -> dual_gamma;
@@ -1089,7 +1093,7 @@ double fast_of(Route* route, Map* map)
     }
 
     // Resto distancias
-    distances += distance(ln -> node -> father, ln -> next -> node -> father);
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
   }
 
   // agrego el dual gamma
@@ -1113,7 +1117,7 @@ double fast_of(Route* route, Map* map)
 }
 
 /** Calcula la utilidad de la ruta */
-double utility(Route* route)
+double utility(Route* route, Map* map)
 {
   // Partes de la utilidad
   double fees = 0;
@@ -1131,7 +1135,7 @@ double utility(Route* route)
     }
 
     // Resto distancias
-    distances += distance(ln -> node -> father, ln -> next -> node -> father);
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
   }
 
   // Costo de cancelacion
@@ -1143,7 +1147,7 @@ double utility(Route* route)
 }
 
 /** Calcula la utilidad de la ruta */
-void print_utility(Route* route)
+void print_utility(Route* route, Map* map)
 {
   // Partes de la utilidad
   double fees = 0;
@@ -1161,7 +1165,7 @@ void print_utility(Route* route)
     }
 
     // Resto distancias
-    distances += distance(ln -> node -> father, ln -> next -> node -> father);
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
   }
 
   // Costo de cancelacion
@@ -1177,7 +1181,7 @@ void print_utility(Route* route)
 }
 
 /** Ajusta los tiempos de una ruta y determina si es factible */
-bool assign_time(Route* route)
+bool assign_time(Route* route, Map* map)
 {
   // route: ruta a ajustar sus tiempos
 
@@ -1196,7 +1200,7 @@ bool assign_time(Route* route)
   // Itero sobre la ruta
   for (LNode* ln = route -> nodes -> start; ln -> next; ln = ln -> next)
   {
-    double dist = distance(ln -> node -> father, ln -> next -> node -> father);
+    double dist = distance(ln -> node -> father, ln -> next -> node -> father, map);
     double delay = ln -> node -> delay_time;
     double end_i = ln -> node -> end_time;
     double start_j = ln -> next -> node -> start_time;
@@ -1215,7 +1219,7 @@ bool assign_time(Route* route)
   // Asigno los tiempos de salida
   for (LNode* ln = route -> nodes -> end; ln -> last; ln = ln -> last)
   {
-    double dist = distance(ln -> last -> node -> father, ln -> node -> father);
+    double dist = distance(ln -> last -> node -> father, ln -> node -> father, map);
     ln -> last -> leave_time = ln -> arrive_time - dist;
   }
   LNode* end = route -> nodes -> end;

@@ -41,7 +41,12 @@ n_costos líneas siguientes
 
 ## PB.txt
 
-numero_aviones líneas parten con
+Primera linea
+```
+[numero_aviones]
+```
+
+siguientes numero_aviones líneas parten con
 
 ```
 [n_nodos_ruta]

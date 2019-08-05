@@ -871,7 +871,7 @@ double* optimize_routes(Route*** separated_routes, int* counts, Map* map)
     utility_assign_weights(routes[i]);
     // Calculo la utilidad de las rutas y escribo la funcion objetivo:
     // x_i * U_i
-    fo_ponderators[i] = utility(routes[i]);
+    fo_ponderators[i] = utility(routes[i], map);
   }
   // Arreglo con los nombres de las variables
   char** var_names = malloc(sizeof(char*) * count);
@@ -1218,7 +1218,7 @@ double optimize_routes_relaxed(Route*** separated_routes, int* counts, Map* map)
     utility_assign_weights(routes[i]);
     // Calculo la utilidad de las rutas y escribo la funcion objetivo:
     // x_i * U_i
-    fo_ponderators[i] = utility(routes[i]);
+    fo_ponderators[i] = utility(routes[i], map);
   }
   // Arreglo con los nombres de las variables
   char** var_names = malloc(sizeof(char*) * count);

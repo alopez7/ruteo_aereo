@@ -16,3 +16,93 @@ RutasGeneradas = 275
 Probabilidades = [0.251799, 0.007194, 0.050360, 0.007194, 0.323741, 0.007194,  0.352518]
 Veces ejecutado = [549, 163, 168, 451, 482, 155,  469]
 
+Utilidad = 486778.000000
+RutasSolucion = 4
+RutasGeneradas = 33
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [21, 20, 20, 20, 19, 20,  19]
+
+Utilidad = 537169.000000
+RutasSolucion = 4
+RutasGeneradas = 34
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [28, 24, 24, 24, 23, 24,  25]
+
+Utilidad = 573128.000000
+RutasSolucion = 4
+RutasGeneradas = 36
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [24, 24, 27, 24, 24, 24,  24]
+
+Utilidad = 539549.000000
+RutasSolucion = 4
+RutasGeneradas = 41
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [34, 32, 34, 32, 32, 32,  32]
+
+Utilidad = 557743.000000
+RutasSolucion = 4
+RutasGeneradas = 40
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [43, 44, 44, 44, 44, 44,  44]
+
+Utilidad = 539549.000000
+RutasSolucion = 4
+RutasGeneradas = 35
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [33, 30, 33, 32, 32, 32,  33]
+
+Utilidad = 557743.000000
+RutasSolucion = 4
+RutasGeneradas = 41
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [40, 40, 41, 40, 39, 40,  40]
+
+Utilidad = 559599.000000
+RutasSolucion = 4
+RutasGeneradas = 45
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [39, 36, 37, 36, 36, 36,  37]
+
+Utilidad = 554620.000000
+RutasSolucion = 4
+RutasGeneradas = 36
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [34, 35, 37, 36, 35, 36,  37]
+
+Utilidad = 480733.000000
+RutasSolucion = 4
+RutasGeneradas = 29
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [17, 16, 18, 16, 16, 16,  17]
+
+Utilidad = 541263.000000
+RutasSolucion = 4
+RutasGeneradas = 37
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [23, 24, 24, 24, 24, 24,  23]
+
+Utilidad = 607260.000000
+RutasSolucion = 4
+RutasGeneradas = 52
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [57, 56, 59, 56, 56, 56,  59]
+
+Utilidad = 528310.000000
+RutasSolucion = 4
+RutasGeneradas = 36
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [20, 19, 22, 20, 20, 20,  19]
+
+Utilidad = 577848.000000
+RutasSolucion = 4
+RutasGeneradas = 53
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [66, 64, 68, 65, 64, 64,  67]
+
+Utilidad = 539549.000000
+RutasSolucion = 4
+RutasGeneradas = 30
+Probabilidades = [0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  0.142857]
+Veces ejecutado = [20, 20, 21, 20, 20, 20,  20]
+
