@@ -1146,6 +1146,42 @@ double utility(Route* route, Map* map)
   return total;
 }
 
+/** Calcula la utilidad de la ruta y retorna el desglose en un arreglo de tamanio 3*/
+double* utility_details(Route* route, Map* map)
+{
+  // Partes de la utilidad
+  double fees = 0;
+  double distances = 0;
+  double cancellation_cost = 0;
+
+  // Sumo las tarifas y resto los costos de viaje
+  for (LNode* ln = route -> nodes -> start; ln -> next; ln = ln -> next)
+  {
+    // Si es pickup
+    if (ln -> node -> node_type == PICKUP)
+    {
+      // sumo la parte de la carga que se cargo
+      fees += ln -> node -> fee * ln -> delta_weight;
+    }
+
+    // Resto distancias
+    distances += cost(ln -> node -> father, ln -> next -> node -> father, map);
+  }
+
+  // Costo de cancelacion
+  cancellation_cost = get_cancellation_cost(route);
+
+  // Calculo el total y lo retorno
+  double total = fees - distances - cancellation_cost;
+
+  double* ans = malloc(sizeof(double) * 4);
+  ans[0] = fees;
+  ans[1] = distances;
+  ans[2] = cancellation_cost;
+  ans[3] = total;
+  return ans;
+}
+
 /** Calcula la utilidad de la ruta */
 void print_utility(Route* route, Map* map)
 {

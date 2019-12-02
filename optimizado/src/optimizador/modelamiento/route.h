@@ -154,6 +154,9 @@ double fast_of(Route* route, Map* map);
 /** Calcula la utilidad de la ruta */
 double utility(Route* route, Map* map);
 
+/** Calcula la utilidad de la ruta y retorna el desglose en un arreglo de tamanio 3*/
+double* utility_details(Route* route, Map* map);
+
 /** Calcula la utilidad de la ruta */
 void print_utility(Route* route, Map* map);
 

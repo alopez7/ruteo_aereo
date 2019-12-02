@@ -61,7 +61,12 @@ int main(int argc, char *argv[])
           if (solution[pos] > 0)
           {
             route_print(ans -> routes[i][j], detail_output);
-            fprintf(detail_output, "Utility: %lf\n", utility(ans -> routes[i][j], ans -> map));
+            double* ut_details = utility_details(ans -> routes[i][j], ans -> map);
+            fprintf(detail_output, "Fees: %lf\n", ut_details[0]);
+            fprintf(detail_output, "Costos transporte: %lf\n", ut_details[1]);
+            fprintf(detail_output, "Costos cancelacion: %lf\n", ut_details[2]);
+            fprintf(detail_output, "Utilidad total: %lf\n", ut_details[3]);
+            free(ut_details);
           }
           pos += 1;
         }
